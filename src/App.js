@@ -1,7 +1,31 @@
-import React from "react";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  createSearchParams,
+} from "react-router-dom";
+import { Navbar } from "./components/navbar/Navbar";
+import { Product } from "./pages/product/Product";
+import { Products } from "./pages/products/Products";
+import { Cart } from "./pages/cart/Cart";
+import { NotFound } from "./pages/not -found/Not-found";
 
 const App = () => {
-  return <div>App</div>;
+  const navigate = useNavigate();
+  const onSearch = (searchQuery) => {
+    navigate(`/?${createSearchParams({ q: searchQuery })}`);
+  };
+  return (
+    <>
+      <Navbar onSearch={onSearch} cartItemCount={2} />
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/product/:productId" element={<Product />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
 };
 
 export default App;
