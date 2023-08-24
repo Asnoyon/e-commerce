@@ -1,7 +1,8 @@
 const FakeStoreApi = {
   fetchAllProducts: async () => {
-    const res = await fetch("https://fakeestoreapi.com/products");
-    const result = res.json();
+    const res = await fetch("https://fakestoreapi.com/products");
+    const result = await res.json();
+
     return result;
   },
   fetchProductById: async (productId) => {
@@ -12,6 +13,9 @@ const FakeStoreApi = {
   fetchProductsBySearchQuery: async (query) => {
     const res = await fetch("https://fakestoreapi.com/products");
     const result = await res.json();
-    return result;
+    return result.filter((product) =>
+      product.title.toLowerCase().includes(query)
+    );
   },
 };
+export { FakeStoreApi };
