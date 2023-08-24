@@ -7,7 +7,7 @@ const Navbar = ({ onSearch, cartItemCount }) => {
     if (searchQuery.trim().length) {
       onSearch(searchQuery.trim());
     }
-    searchQuery("");
+    setSearchQuery("");
   };
 
   return (
@@ -16,7 +16,7 @@ const Navbar = ({ onSearch, cartItemCount }) => {
         <header className="container py-2">
           <div className="grid">
             <Link to="/" className="link">
-              <h1 className="brand">E-commerece</h1>
+              <h1 className="brand">E-commerce</h1>
             </Link>
             <div className="formContainer">
               <form className="search">
