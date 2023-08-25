@@ -5,9 +5,10 @@ const Item = ({ data, addToCart }) => {
   return (
     <>
       <div className="card">
-        <img src={image} />
         <div className="grid">
-          <div className="image"></div>
+          <div className="image">
+            <img src={image} />
+          </div>
           <div className="title">
             <Link to={`/product/${id}`} className="link titleLink">
               {title}
@@ -18,7 +19,7 @@ const Item = ({ data, addToCart }) => {
               ${price}
             </span>
             <div className="cart" onClick={addToCart}>
-              <img className="cartImg" src="./cart.png" alt="cart" />
+              <img className="cartImg" src="./cart3.png" alt="cart" />
             </div>
           </div>
         </div>
