@@ -42,7 +42,7 @@ const Product = () => {
         <div className="product py-2">
           <div className="details grid p-3">
             <div className="product-image">
-              <img src={product.image} alt="product image" />
+              <img src={product.image} alt="product" />
             </div>
             <div className="info">
               <div className="description">
@@ -55,7 +55,7 @@ const Product = () => {
                   className="cart"
                   onClick={() => addToCart(product)}
                 >
-                  <img src="/cart3.png" />
+                  <img src="/cart3.png" alt="cart_empty"/>
                 </span>
               </div>
             </div>

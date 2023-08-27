@@ -22,6 +22,7 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     const productIdx = cart.findIndex((item) => item.product.id === product.id);
+    console.log(productIdx);
 
     if (productIdx !== -1) {
       increaseQuantity(product.id);
@@ -38,7 +39,9 @@ const CartProvider = ({ children }) => {
     const copy = cart.slice();
     const productIdx = copy.findIndex((item) => item.product.id === productId);
     if (productIdx !== -1) {
+      // console.log(productIdx);
       copy[productIdx].quantity += 1;
+      // console.log(copy[productIdx].quantity);
       setCart(copy);
     }
   };

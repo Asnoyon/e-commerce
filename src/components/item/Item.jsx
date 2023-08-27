@@ -7,7 +7,7 @@ const Item = ({ data, addToCart }) => {
       <div className="card">
         <div className="grid">
           <div className="image">
-            <img src={image} />
+            <img src={image} alt="" />
           </div>
           <div className="title">
             <Link to={`/product/${id}`} className="link titleLink">
